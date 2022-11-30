@@ -13,7 +13,8 @@
         "@schematics/angular:component": {
           "inlineTemplate": false,
           "inlineStyle": false,
-          "skipTests": true
+          "skipTests": true,
+          "standalone": true
         },
         "@schematics/angular:class": {
           "skipTests": true

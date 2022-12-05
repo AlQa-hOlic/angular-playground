@@ -1,14 +1,21 @@
+import { getSupportedInputTypes } from "@angular/cdk/platform";
 import { Component } from "@angular/core";
 
 @Component({
   selector: "app-root",
   template: `
-    <h1 class="text-3xl font-bold selection:bg-amber-500 selection:text-white">
-      Hello, world!
-    </h1>
-    <pre>public static void main(String args[]) {{ "{" }}}</pre>
+    <div class="flex h-screen flex-col">
+      <h1
+        class="text-3xl font-bold selection:bg-amber-500 selection:text-white"
+      >
+        Hello, world!
+      </h1>
+      <app-json-editor class="grow"></app-json-editor>
+    </div>
     <router-outlet></router-outlet>
   `,
   styles: [],
 })
-export class AppComponent {}
+export class AppComponent {
+  inputTypes = getSupportedInputTypes();
+}

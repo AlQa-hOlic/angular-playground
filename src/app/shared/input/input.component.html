@@ -1,0 +1,24 @@
+<label
+  [for]="id"
+  class="mb-2 block text-sm font-medium text-gray-900"
+  *ngIf="label && _type !== 'hidden'"
+  >{{ label }}</label
+>
+<div class="relative min-w-max flex-1">
+  <div
+    class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
+    *ngIf="icon"
+  >
+    <i [ngClass]="'text-gray-500 ' + icon"></i>
+  </div>
+  <input
+    [type]="_type"
+    [id]="id"
+    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+    [class.pl-10]="icon"
+    [placeholder]="placeholder || ''"
+  />
+</div>
+<div class="mt-1 text-sm text-gray-500" *ngIf="helpText && _type !== 'hidden'">
+  {{ helpText }}
+</div>

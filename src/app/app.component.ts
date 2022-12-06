@@ -10,7 +10,9 @@ import { Component } from "@angular/core";
       >
         Hello, world!
       </h1>
-      <app-json-editor class="grow"></app-json-editor>
+      <app-json-editor
+        (configChanged)="configChanged($event)"
+      ></app-json-editor>
     </div>
     <router-outlet></router-outlet>
   `,
@@ -18,4 +20,8 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   inputTypes = getSupportedInputTypes();
+
+  configChanged(newConfig: string) {
+    alert("Config update: " + JSON.stringify(JSON.parse(newConfig), null, 2));
+  }
 }

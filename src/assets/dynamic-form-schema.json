@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "title": "Dynamic Form Config",
+  "description": "Configuration options for customizing the dynamic form",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["p1"],
+  "properties": {
+    "p1": {
+      "enum": ["v1", "v2"],
+      "description": "Parameter 1"
+    }
+  }
+}

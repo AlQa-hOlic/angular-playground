@@ -2,12 +2,12 @@ import { TestBed } from "@angular/core/testing";
 import { RouterTestingModule } from "@angular/router/testing";
 
 import { AppComponent } from "./app.component";
-import { JsonEditorComponent } from "./shared/json-editor/json-editor.component";
+import { JsonConfigEditorComponent } from "./shared/json-config-editor/json-config-editor.component";
 
 describe("AppComponent", () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule, JsonEditorComponent],
+      imports: [RouterTestingModule, JsonConfigEditorComponent],
       declarations: [AppComponent],
     }).compileComponents();
   });

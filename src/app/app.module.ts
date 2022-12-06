@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
-import { JsonEditorComponent } from "./shared/json-editor/json-editor.component";
+import { JsonConfigEditorComponent } from "./shared/json-config-editor/json-config-editor.component";
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,7 +14,7 @@ import { JsonEditorComponent } from "./shared/json-editor/json-editor.component"
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    JsonEditorComponent,
+    JsonConfigEditorComponent,
   ],
 })
 export class AppModule {}

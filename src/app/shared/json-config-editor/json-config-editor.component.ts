@@ -8,6 +8,7 @@ import {
   Input,
   NgZone,
   OnDestroy,
+  OnInit,
   Output,
   ViewChild,
 } from "@angular/core";
@@ -24,7 +25,7 @@ import { EditorService } from "../services/editor.service";
   styleUrls: ["./json-config-editor.component.css"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class JsonConfigEditorComponent implements OnDestroy {
+export class JsonConfigEditorComponent implements OnInit, OnDestroy {
   @Input() private _value = JSON.stringify({}, null, 2);
 
   @Output() configChanged = new EventEmitter<string>();
@@ -55,14 +56,16 @@ export class JsonConfigEditorComponent implements OnDestroy {
 
   constructor(
     private zone: NgZone,
-    editorService: EditorService,
+    private editorService: EditorService,
     @Inject("baseHref") private baseHref: string
-  ) {
-    editorService.loaded.subscribe(() => {
+  ) {}
+
+  ngOnInit(): void {
+    this.editorService.loaded.subscribe(() => {
       this.initJsonEditor();
     });
 
-    editorService.load();
+    this.editorService.load();
   }
 
   initJsonEditor() {
@@ -83,12 +86,18 @@ export class JsonConfigEditorComponent implements OnDestroy {
       ],
     });
 
-    // Create model for the editor state
-    this._options.model = monaco.editor.createModel(
-      this._value,
-      this._options.language,
-      this._uri
-    );
+    // Create or get model for the editor state
+    const model = monaco.editor.getModel(this._uri);
+    if (model) {
+      this._options.model = model;
+      this._options.model.setValue(this._value);
+    } else {
+      this._options.model = monaco.editor.createModel(
+        this._value,
+        this._options.language,
+        this._uri
+      );
+    }
 
     // Initialize editor
     this._editor = monaco.editor.create(

@@ -1,0 +1,3 @@
+angular-playground.localhost {
+	reverse_proxy localhost:4200
+}

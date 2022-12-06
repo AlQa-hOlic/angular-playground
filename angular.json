@@ -57,6 +57,11 @@
                 "glob": "**/*",
                 "input": "node_modules/monaco-editor",
                 "output": "assets/monaco-editor"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/monaco-editor/min-maps",
+                "output": "min-maps"
               }
             ],
             "styles": ["src/styles.css"],
@@ -84,21 +89,7 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true,
-              "assets": [
-                "src/favicon.ico",
-                "src/assets",
-                {
-                  "glob": "**/*",
-                  "input": "node_modules/monaco-editor",
-                  "output": "assets/monaco-editor"
-                },
-                {
-                  "glob": "**/*",
-                  "input": "node_modules/monaco-editor/min-maps",
-                  "output": "min-maps"
-                }
-              ]
+              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"

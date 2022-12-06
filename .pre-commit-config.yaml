@@ -9,7 +9,7 @@ repos:
       - id: check-yaml
         args:
           - --allow-multiple-documents
-      - id: check-added-large-files
+      # - id: check-added-large-files
   - repo: local
     hooks:
       - id: eslint

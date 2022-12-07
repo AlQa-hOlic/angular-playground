@@ -1,31 +1,31 @@
 <main
-  class="flex h-screen items-center justify-center bg-slate-900 bg-[radial-gradient(ellipse_at_center,rgb(15_23_42)_0%,rgb(0_0_0)_100%);] text-slate-400"
+  class="relative flex h-screen max-h-screen items-center justify-center overflow-hidden overflow-x-auto bg-slate-900 bg-[radial-gradient(ellipse_at_center,rgb(15_23_42)_0%,rgb(0_0_0)_100%);] px-4 text-slate-400"
 >
   <div
-    class="noise-wrapper pointer-events-none absolute inset-0 overflow-hidden"
+    class="noise-wrapper pointer-events-none absolute top-0 left-0 h-full w-full overflow-hidden"
   >
     <div class="noise"></div>
   </div>
   <div class="space-y-3 font-mono selection:bg-amber-500 selection:text-white">
-    <h1 class="text-9xl">404</h1>
-    <p class="text-lg">
+    <h1 class="text-7xl md:text-9xl">404</h1>
+    <p class="text-sm md:text-lg">
       Looks like this route is not listed in
       <a
         target="_blank"
         href="https://github.com/AlQa-hOlic/angular-playground/blob/main/src/app/app.routes.ts"
         class="text-slate-100 hover:underline"
       >
-        app.routes.ts<sup
-          ><i
-            class="fa fa-arrow-up-right-from-square ml-1 text-xs"
-          ></i></sup></a
-      >...
+        app.routes.ts
+        <sup>
+          <i class="fa fa-arrow-up-right-from-square text-xs"></i>
+        </sup>
+      </a>
     </p>
 
-    <p class="text-lg">
+    <p class="text-sm md:text-lg">
       <a routerLink="" class="text-slate-100 hover:underline">
         Let&apos;s take you back
-        <i class="fa fa-home"></i> home.
+        <span class="whitespace-nowrap"><i class="fa fa-home"></i> home.</span>
       </a>
     </p>
   </div>

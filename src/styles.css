@@ -60,3 +60,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  @apply font-sans text-base selection:bg-amber-500 selection:text-white;
+}

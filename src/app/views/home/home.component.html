@@ -1,11 +1,5 @@
-<div class="flex h-screen flex-col">
-  <h1
-    class="mb-2 text-3xl font-bold selection:bg-amber-500 selection:text-white"
-  >
-    Hello, world!
-  </h1>
-  <a class="text-blue-500 visited:text-blue-700" routerLink="/html5-test"
-    >HTML5 Test Page</a
-  >
+<div class="prose flex h-screen max-w-full flex-col pt-12">
+  <h1 class="mx-4 mb-2">Hello, world!</h1>
+  <a routerLink="/html5-test">HTML5 Test Page</a>
   <app-json-editor (configChanged)="configChanged($event)"></app-json-editor>
 </div>
